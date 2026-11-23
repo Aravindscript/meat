@@ -2184,3 +2184,234 @@ img {
     font-size: 39px;
   }
 }
+
+/* =====================================
+   MOBILE FIXES - CART & FRESH COLLECTION
+===================================== */
+
+@media (max-width: 550px) {
+
+  /* 1. MOBILE CART DRAWER FIX */
+
+  .cart-overlay {
+    position: fixed !important;
+    top: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    left: 0 !important;
+
+    width: 100% !important;
+    height: 100vh !important;
+    height: 100dvh !important;
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: stretch;
+
+    overflow: hidden;
+    z-index: 9999 !important;
+    overscroll-behavior: contain;
+  }
+
+  .cart-drawer {
+    position: relative;
+    flex: 0 0 min(420px, 92vw);
+
+    width: min(420px, 92vw) !important;
+    max-width: 92vw !important;
+
+    height: 100% !important;
+    max-height: 100dvh !important;
+
+    padding: 20px;
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+
+    animation: drawerIn .3s ease;
+    box-sizing: border-box;
+  }
+
+  .drawer-items {
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .cart-footer {
+    flex-shrink: 0;
+  }
+
+
+  /* 2. HOME FRESH COLLECTION MOBILE CAROUSEL */
+
+  .fresh-collection-inner {
+    grid-template-columns: 1fr;
+    width: 100%;
+    gap: 30px;
+  }
+
+  .fresh-collection-heading {
+    text-align: center;
+  }
+
+  .fresh-collection-heading p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .fresh-collection-cards {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+
+    width: 100%;
+    max-width: 100%;
+
+    gap: 14px;
+    margin: 0;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+
+    padding: 5px 2px 18px;
+  }
+
+  .fresh-collection-cards .product-card {
+    flex: 0 0 82% !important;
+    width: 82% !important;
+    max-width: 300px;
+    min-width: 0;
+
+    height: 395px;
+    scroll-snap-align: center;
+
+    transform: none;
+  }
+
+  .fresh-collection-cards .product-card:hover {
+    transform: none;
+  }
+
+  .fresh-collection-cards .product-img {
+    height: 185px;
+  }
+
+  .fresh-collection-cards .card-info {
+    padding: 14px;
+  }
+
+  .fresh-collection-cards .card-info h3 {
+    font-size: 15px;
+  }
+
+  .fresh-collection-cards .product-short {
+    font-size: 9px;
+  }
+
+  .fresh-collection-cards::-webkit-scrollbar {
+    height: 4px;
+  }
+
+  .fresh-collection-cards::-webkit-scrollbar-thumb {
+    background: #e33129;
+    border-radius: 10px;
+  }
+
+  .fresh-collection-cards::-webkit-scrollbar-track {
+    background: #333;
+  }
+}
+
+
+/* EXTRA SMALL MOBILE */
+
+@media (max-width: 360px) {
+
+  .fresh-collection-cards .product-card {
+    flex-basis: 88% !important;
+    width: 88% !important;
+  }
+
+  .cart-drawer {
+    flex-basis: 94vw;
+    width: 94vw !important;
+    max-width: 94vw !important;
+    padding: 15px;
+  }
+
+}
+
+/* MOBILE CART DRAWER - FINAL FIX */
+@media screen and (max-width: 550px) {
+  .cart-overlay {
+    position: fixed !important;
+    inset: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    height: 100dvh !important;
+    display: block !important;
+    overflow: hidden !important;
+    z-index: 99999 !important;
+  }
+
+  .cart-drawer {
+    position: absolute !important;
+    top: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    left: 0 !important;
+
+    width: 100vw !important;
+    min-width: 100vw !important;
+    max-width: 100vw !important;
+
+    height: 100% !important;
+    max-height: 100% !important;
+
+    box-sizing: border-box !important;
+    padding: 20px !important;
+
+    display: flex !important;
+    flex-direction: column !important;
+    overflow: hidden !important;
+
+    animation: drawerIn .3s ease !important;
+  }
+
+  .cart-header {
+    flex-shrink: 0;
+    width: 100%;
+  }
+
+  .drawer-items {
+    width: 100%;
+    min-height: 0;
+    flex: 1;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .drawer-item {
+    width: 100%;
+  }
+
+  .drawer-item img {
+    flex-shrink: 0;
+  }
+
+  .cart-footer {
+    width: 100%;
+    flex-shrink: 0;
+  }
+
+  .cart-footer .full-button {
+    width: 100%;
+  }
+}
